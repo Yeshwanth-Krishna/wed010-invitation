@@ -769,7 +769,6 @@
 }
 
 .wed010-wishes-container {
-  position: relative;
   width: 100%;
   max-width: 94vw;
   background: var(--wed010-primary);
@@ -817,7 +816,6 @@
   position: absolute;
   width: 15rem;
   z-index: 1;
-  transform: translateZ(0);
 }
 
 .top-left {
