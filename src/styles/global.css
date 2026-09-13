@@ -1,0 +1,97 @@
+/* Global reset, tokens and base typography (external CSS only) */
+
+:root {
+  --wed010-primary: #931711;
+  --wed010-primary-deep: #8b0c0c;
+  --wed010-primary-dark: #7e1e1e;
+  --wed010-accent: #ff918a;
+  --wed010-button: #a62929;
+  --wed010-cream: #f3e6e6;
+  --wed010-ink: #333;
+  --wed010-white: #fff;
+  --wed010-font-script: 'Allura', cursive;
+  --wed010-font-body: 'Kameron', serif;
+  --wed010-nav-h: 80px;
+}
+
+#home,
+#about,
+#gallery {
+  scroll-margin-top: var(--wed010-nav-h);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--wed010-font-body);
+  font-size: 1.6rem;
+  color: var(--wed010-ink);
+  background: var(--wed010-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-width: 1024px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Simple scroll-reveal (mirrors the reference GSAP fade/slide, but keeps
+   content visible if JavaScript is disabled) */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition:
+    opacity 1.5s ease-in-out,
+    transform 1.5s ease-in-out;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+.reveal-left {
+  transform: translateX(-60px);
+}
+
+.reveal-right {
+  transform: translateX(60px);
+}
+
+.reveal-left.revealed,
+.reveal-right.revealed {
+  transform: none;
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

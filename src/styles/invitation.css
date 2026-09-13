@@ -1,0 +1,1309 @@
+/* ------------------------------------------------------------------
+   wed010 invitation theme — high-fidelity recreation of the reference.
+   Class names intentionally mirror the original (wed010-*) so layout,
+   spacing and decorations match section by section.
+------------------------------------------------------------------- */
+
+.wed010-wrapper {
+  width: 100%;
+  background: var(--wed010-white);
+}
+
+/* ============================ Navbar ============================ */
+
+.wed010-navbar-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--wed010-nav-h);
+  background-color: #931711;
+  color: #fff;
+  z-index: 999;
+}
+
+.wed010-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:clamp(.5rem,2vw,1rem) clamp(1rem,4vw,2rem);
+  background-color: #931711;
+}
+
+.wed010-navbar-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  font-family: var(--wed010-font-body);
+  font-size: clamp(2rem,2.5vw,2.2rem);
+}
+
+.wed010-navbar-button,
+.shared-navbar {
+  background-color: transparent;
+  box-shadow: none;
+  gap: 1rem;
+  position: static;
+}
+.wed010-navbar-button, .shared-nav-item.active .nav-label{
+  color: #fff;
+  font-size: 2rem;
+  font-family: var(--wed010-font-body);
+}
+.wed010-navbar-button, .shared-nav-item.active .nav-label {
+  color: #ff918a;
+}
+.shared-navbar {
+  display: flex;
+  width:100%;
+  justify-content: space-around;
+  align-items: center;
+  padding:10px 0;
+  padding-bottom: env(safe-area-inset-bottom,15px);
+  z-index: 1000;
+}
+.wed010-navbar .shared-nav-item{
+  flex:none;
+  padding:0;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width:auto;
+  min-width:6rem;
+}
+.shared-nav-item {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  transition: all .2s ease-in-out;
+}
+
+.shared-nav-item .nav-label {
+  color: #fff;
+  font-size: 2rem;
+  width: 55.1px;
+  min-width: 55.1px;
+  max-width: 55.1px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.shared-nav-item.active {
+  width: 60px;
+  height: 50px;
+  flex: none;
+}
+
+
+
+
+
+/* ============================= Hero ============================= */
+
+.wed010-herosection {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background: var(--wed010-white);
+  overflow: hidden;
+  font-family: var(--wed010-font-body);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: var(--wed010-nav-h);
+}
+
+.wed010-topdecoration {
+  position: absolute;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  min-width: 768px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.wed010-design-left {
+  position: absolute;
+  bottom:0;
+  left: 0;
+  width: clamp(14rem, 28vw, 35rem);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.wed010-design-right {
+  position: absolute;
+  right: 0;
+  bottom:0;
+  transform:scaleX(-1);
+  width: clamp(14rem, 28vw, 35rem);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.wed010-hero-invite-content {
+  position: relative;
+  top:0;
+  left:0;
+  width: 100%;
+  padding-top: clamp(5rem, 18vh, 19rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(0.7rem, 2vh, 1.6rem);
+  z-index: 4;
+  margin-top: 5rem;
+}
+
+@keyframes hero-content-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.wed010-hero-invite-content .invite-text,
+.wed010-hero-invite-content .couple-names,
+.wed010-hero-invite-content .wed010-invite-details,
+.wed010-hero-invite-content .map-btn {
+  opacity: 0;
+  animation: hero-content-entrance 1s ease-out forwards;
+}
+
+.wed010-hero-invite-content .invite-text {
+  animation-delay: 0.1s;
+}
+
+.wed010-hero-invite-content .couple-names {
+  animation-delay: 0.3s;
+}
+
+.wed010-hero-invite-content .wed010-invite-details {
+  animation-delay: 0.5s;
+}
+
+.wed010-hero-invite-content .map-btn {
+  animation-delay: 0.7s;
+}
+
+
+.invite-text {
+  font-size: 2rem;
+  color: var(--wed010-ink);
+  font-weight: 600;
+  font-family: var(--wed010-font-body);
+  letter-spacing: 0.02em;
+  text-align: center;
+  margin: 0;
+}
+
+.couple-names {
+  font-family: var(--wed010-font-script);
+  font-size: 7rem;
+  font-weight: 200;
+  color: var(--wed010-primary);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 3rem);
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+}
+
+.couple-names .and {
+  font-size: 4rem;
+  color: var(--wed010-primary);
+}
+
+.wed010-invite-details {
+  font-size: 3rem;
+  color: var(--wed010-ink);
+  line-height: 1.5;
+  text-align: center;
+  margin: 0;
+}
+
+.map-btn {
+  display: inline-block;
+  background: var(--wed010-button);
+  color: var(--wed010-white);
+  padding: clamp(0.5rem, 1vh, 0.9rem) clamp(1.5rem, 3vw, 2.5rem);
+  border-radius: 999px;
+  font-family: var(--wed010-font-body);
+  font-size: 2.5rem;
+  cursor: pointer;
+  text-align: center;
+  transition:
+    background 0.3s ease,
+    scale 0.2s ease;
+  margin-top: clamp(0.2rem, 0.5vh, 0.5rem);
+}
+
+.map-btn:hover {
+  background: var(--wed010-primary-dark);
+  scale: 1.04;
+}
+
+.mandap {
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  max-width: 400px;
+  z-index: 3;
+  pointer-events: none;
+
+  animation: mandap-rise 1s ease forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+@keyframes mandap-rise {
+  0% {
+    opacity: 0;
+    transform: translate(-50%) translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%) translateY(0);
+  }
+}
+
+.wed010-bottomdesign-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: clamp(14rem, 28vw, 35rem);
+  z-index: 2;
+  pointer-events: none;
+  animation: vase-rise-left 1.5s ease-out forwards;
+  animation-delay: 1.0s;
+  opacity: 0;
+}
+
+.wed010-bottomdesign-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: clamp(14rem, 28vw, 35rem);
+  z-index: 2;
+  pointer-events: none;
+  animation: vase-rise-right 1.5s ease-out forwards;
+  animation-delay: 1.4s;
+  opacity: 0;
+}
+
+@keyframes vase-rise-left {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes vase-rise-right {
+  0% {
+    opacity: 0;
+    transform: translateY(80px) rotate(180deg) scale(1, -1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(180deg) scale(1, -1);
+  }
+}
+
+/* =========================== Countdown ========================== */
+
+.wed010-countdown-section {
+  background-color: var(--wed010-primary-deep);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 20px;
+  position: relative;
+  font-family: var(--wed010-font-body);
+}
+
+.wed010-countdown-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wed010-countdown-title {
+  font-family: var(--wed010-font-script);
+  font-size: 5rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--wed010-white);
+  margin: 0 0 60px;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+.wed010-countdown-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wed010-countdown-wrapper .shared-countdown {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.wed010-countdown-wrapper .time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 15rem;
+}
+
+.wed010-countdown-wrapper .num {
+  font-family: var(--wed010-font-script);
+  font-size: 10rem;
+  font-weight: 200;
+  font-style: italic;
+  color: var(--wed010-white);
+  line-height: 1;
+  letter-spacing: 1px;
+}
+
+.wed010-countdown-wrapper .label {
+  font-family: var(--wed010-font-script);
+  font-size: 24px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--wed010-white);
+  text-transform: capitalize;
+  line-height: 1;
+  letter-spacing: 0.5px;
+}
+
+/* ========================= Couple / About ======================= */
+
+.wed010-couple-section {
+  color: var(--wed010-white);
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--wed010-white);
+  align-content: center;
+}
+
+.wed010-Aboutcouple {
+  width: 100%;
+  min-height: 100vh;
+  border-radius: 0 50px;
+  background: var(--wed010-primary-deep);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.couple-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90%;
+  gap: 3rem;
+}
+
+.couple-card {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.wed010-bride-info {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.wed010-groom-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.image-wrapperbride,
+.image-wrappergroom {
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.wed010-brideimage,
+.wed010-groomimage {
+  width: 220px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.wed010-brideimage {
+  border-radius: 0 0 45% 45%;
+}
+
+.wed010-groomimage {
+  border-radius: 45% 45% 0 0;
+}
+
+.wed010-bride-arch-border {
+  position: absolute;
+  border: 2px solid var(--wed010-white);
+  border-radius: 0 0 50% 50%;
+  width: 23rem;
+  aspect-ratio: 3 / 4;
+  top: -4%;
+  left: 47%;
+  transform: translate(-50%);
+  pointer-events: none;
+}
+
+.wed010-groom-arch-border {
+  position: absolute;
+  border: 2px solid var(--wed010-white);
+  border-radius: 50% 50% 0 0;
+  width: 23rem;
+  aspect-ratio: 3 / 4;
+  top: -6%;
+  right: 47%;
+  transform: translate(50%);
+  pointer-events: none;
+}
+
+.couplebride-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  width: 50%;
+  text-align: right;
+  gap: 0.8rem;
+}
+
+.couplegroom-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 50%;
+  text-align: left;
+  gap: 0.8rem;
+}
+
+.wed010-name {
+  font-family: var(--wed010-font-script);
+  font-weight: 200;
+  font-size: 6rem;
+  line-height: 1.1;
+}
+
+.wed010-relation {
+  font-family: var(--wed010-font-body);
+  font-weight: 200;
+  font-size: 2rem;
+}
+
+.wed010-desc {
+  font-family: var(--wed010-font-body);
+  font-weight: 200;
+  font-size: 2rem;
+  line-height: 1.6;
+  width: 65%;
+}
+
+.couplebride-info .wed010-desc {
+  margin-left: auto;
+}
+
+.wed010-floral-left,
+.wed010-floral-right {
+  width: clamp(150px, 20vw, 250px);
+}
+
+.wed010-floral-left {
+  position: absolute;
+  top: 20%;
+  left: -4%;
+  z-index: 2;
+}
+
+.wed010-floral-right {
+  position: absolute;
+  bottom: 24%;
+  right: -4%;
+  z-index: 2;
+}
+
+/* ============================= Wishes =========================== */
+
+.wed010-wishes {
+  position: relative;
+  background: var(--wed010-primary-deep);
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 60px 40px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.wed010-design {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.wed010-design.d1 {
+  top: -6rem;
+  left: 30rem;
+  width: 250px;
+  transform: rotate(90deg);
+}
+
+.wed010-design.d2 {
+  top: 7rem;
+  right: -8rem;
+  width: 250px;
+  transform: scaleX(-1);
+}
+
+.wed010-design.d3 {
+  bottom: 5rem;
+  left: -8rem;
+  width: 250px;
+}
+
+.wed010-design.d4 {
+  bottom: -11rem;
+  right: 28rem;
+  width: 257px;
+  transform: rotate(270deg);
+}
+
+.wed010-wishes-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.wed010-wishes-left {
+  flex: 1 1 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.wed010-wishes-title {
+  font-family: var(--wed010-font-script);
+  font-size: clamp(3rem, 5vw, 7rem);
+  font-weight: 200;
+  color: var(--wed010-white);
+  line-height: 1.25;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 6);
+  white-space: nowrap;
+}
+
+.wed010-wishes-right {
+  flex: 0 0 46%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wed010-wish-card {
+  position: relative;
+  width: 480px;
+  height: 430px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.wed010-wishes-whiteBg {
+  width: 85%;
+  height: 85%;
+  background: var(--wed010-white);
+  border-radius: 14px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.wed010-wisher-name {
+  font-family: var(--wed010-font-script);
+  font-size: 3rem;
+  font-weight: 400;
+  color: #000;
+  margin: 0;
+  text-align: center;
+  font-style: italic;
+}
+
+.wed010-wish-message {
+  font-family: var(--wed010-font-body);
+  font-size: 2rem;
+  color: var(--wed010-primary);
+  line-height: 1.4;
+  text-align: center;
+  margin: 15px 20px;
+  flex: 1;
+}
+
+.wed010-wish-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4px;
+  width: 100%;
+}
+
+.wed010-arrow-wishes {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  background: rgba(120, 20, 20, 0.9);
+  color: var(--wed010-white);
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.15s;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.wed010-arrow-wishes:hover {
+  background: rgba(160, 30, 30, 0.85);
+  transform: scale(1.08);
+}
+
+.wed010-counter-wishes {
+  font-size: 2rem;
+  color: var(--wed010-white);
+  background: rgba(100, 18, 18, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50px;
+  padding: 4px 16px;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+}
+
+/* ========================== Send wishes ========================= */
+
+.wed010-wishes-section {
+  background: var(--wed010-white);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+}
+
+.wed010-wishes-container {
+  width: 100%;
+  max-width: 94vw;
+  background: var(--wed010-primary);
+  min-height: 90vh;
+  padding: 85px 0;
+  align-content: center;
+  overflow: hidden;
+}
+
+.wed010-wishes-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  width: 100%;
+  margin: 5% 0;
+  flex: 1;
+  text-align: center;
+  color: var(--wed010-white);
+  position: relative;
+  z-index: 2;
+}
+
+.wed010-wishes-section .wed010-wishes-title {
+  font-size: 48px;
+  font-weight: 400;
+  white-space: normal;
+}
+
+.wed010-sendWishes-wrapper {
+  width: min(100%, 70rem);
+  height:min(80dvh,30rem);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  margin-bottom: 5%;
+}
+
+.flower {
+  position: absolute;
+  width: 15rem;
+  z-index: 1;
+}
+
+.top-left {
+  top: -1%;
+  left: 0;
+}
+
+.top-right {
+  top: -2%;
+  right: 0;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: -10px;
+}
+
+.Wisher-Section {
+  position: relative;
+  margin: auto;
+  align-content: center;
+}
+
+.wed010-shared-wisher {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 auto;
+}
+
+.wed010-shared-wisher .wisher-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.wisher-form{
+  width:80%;
+}
+
+.wed010-shared-wisher .wisher-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.wed010-shared-wisher .wisher-input,
+.wed010-shared-wisher .wisher-textarea {
+  width: 100% !important;
+  background: #8c0d0d;
+  border: none;
+  border-radius: 8px;
+  padding: 20px 25px;
+  font-family: var(--wed010-font-body);
+  font-size: 16px;
+  color: var(--wed010-white);
+  outline: none;
+}
+
+.wed010-shared-wisher .wisher-input::placeholder,
+.wed010-shared-wisher .wisher-textarea::placeholder {
+  color: #f3dcdc;
+}
+
+.wed010-shared-wisher .wisher-textarea {
+  resize: none;
+  min-height: 140px;
+}
+
+.wisher-textarea-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.wed010-shared-wisher .wisher-ai-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  font-size: 19px;
+  font-weight: 600;
+  background: var(--wed010-white);
+  color: #8c0d0d;
+  font-family: var(--wed010-font-body);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+}
+
+.wed010-shared-wisher .wisher-ai-btn:hover {
+  transform: translateY(-1px);
+}
+
+.wed010-shared-wisher .wisher-ai-btn .ai-text {
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition:
+    max-width 0.25s ease,
+    opacity 0.2s ease;
+}
+
+.wed010-shared-wisher .wisher-ai-btn:hover .ai-text,
+.wed010-shared-wisher .wisher-ai-btn:focus-visible .ai-text {
+  max-width: 180px;
+  opacity: 1;
+}
+
+.wed010-shared-wisher .wisher-button {
+  background: var(--wed010-cream);
+  color: #8c0d0d;
+  font-family: var(--wed010-font-body);
+  width:100%;
+  padding: 10px 40px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.wed010-shared-wisher .wisher-button:hover {
+  background: var(--wed010-white);
+}
+
+.wed010-shared-wisher .wisher-feedback {
+  font-family: var(--wed010-font-body);
+  font-size: 2rem;
+  margin-top: 5px;
+  color: var(--wed010-white);
+}
+
+/* ============================ Schedule ========================== */
+
+.wed010-schedule-section {
+  padding: 5rem 4rem;
+  width: 100vw;
+  min-height: 100dvh;
+  position: relative;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: var(--wed010-white);
+  align-content: center;
+}
+
+.wed010-schedule-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+}
+
+.wed010-heading {
+  font-family: var(--wed010-font-script);
+  font-weight: 200;
+  font-size: 7rem;
+  line-height: 1.1;
+  color: var(--wed010-primary);
+  text-align: center;
+}
+
+.wed010-design-top {
+  position: absolute;
+  top: -1%;
+  left: 0;
+  width: 10%;
+}
+
+.wed010-design-bottom {
+  position: absolute;
+  bottom: 0%;
+  right: -20px;
+  width: 10%;
+}
+
+.wed010-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  border-radius: 24px;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.wed010-photoWrap {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.wed010-photo {
+  width: 90%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px 0 0 20px;
+}
+
+.wed010-card {
+  position: relative;
+  left: 0;
+  transform: translate(-5%);
+  background: var(--wed010-primary-deep);
+  border-radius: 18px;
+  font-family: var(--wed010-font-body);
+  padding: 3px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 95%;
+  box-sizing: border-box;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.wed010-cardTitle {
+  font-family: var(--wed010-font-script);
+  font-size: 6rem;
+  font-weight: 200;
+  text-align: center;
+  color: var(--wed010-white);
+  width: 100%;
+}
+
+.wed010-dateTop {
+  font-size: 2rem;
+  color: var(--wed010-white);
+  opacity: 0.95;
+  text-align: center;
+  width: 100%;
+}
+
+.wed010-gap {
+  height: 10px;
+  width: 100%;
+}
+
+.wed010-eventsList {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.wed010-eventRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.72);
+  color: var(--wed010-white);
+  padding: 6px 0;
+}
+
+.wed010-eventName {
+  font-weight: 500;
+}
+
+.wed010-eventTime {
+  font-weight: 700;
+}
+
+.wed010-address {
+  line-height: 1.4;
+  opacity: 0.95;
+  font-size: 2rem;
+  color: var(--wed010-white);
+  width: 100%;
+  text-align: center;
+}
+
+.wed010-mapBtn {
+  background: var(--wed010-white);
+  color: var(--wed010-primary);
+  font-weight: 200;
+  font-size: 2rem;
+  width: 20rem;
+  text-align: center;
+  padding: 8px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+
+.wed010-mapBtn:hover {
+  transform: translateY(-1px);
+}
+
+.wed010-controls {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.wed010-namePill {
+  pointer-events: none;
+  border: none;
+  background-color: var(--wed010-primary-deep);
+  color: var(--wed010-white);
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-family: var(--wed010-font-body);
+  font-size: 2rem;
+  font-weight: 200;
+}
+
+.wed010-single {
+  max-width: 780px;
+  margin-inline: auto;
+}
+
+.wed010-single + .wed010-controls {
+  display: none;
+}
+
+/* ========================= Music buttons ======================== */
+
+.wed010-music-section #music-btn-main,
+.wed010-music-section #call-btn {
+  position: fixed;
+  z-index: 100;
+  right: 3rem;
+  bottom:3rem;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  padding: 0.6rem;
+  background-color: var(--wed010-primary);
+  backdrop-filter: blur(45px);
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  color: var(--wed010-white);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.wed010-music-section #music-btn-main:hover,
+.wed010-music-section #call-btn:hover {
+  transform: scale(1.06);
+}
+
+.wed010-music-section #music-btn-main {
+  bottom: 3rem;
+}
+
+.wed010-music-section #call-btn {
+  bottom: 9rem;
+  text-decoration: none;
+}
+
+/* ============================= Footer =========================== */
+
+.shared-footer-main {
+  width: 100%;
+  background: var(--wed010-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 4;
+}
+
+.shared-footer-top-section {
+  width: 100%;
+  max-width: 1280px;
+  padding: 4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.shared-footer-branding-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.shared-footer-branding-text {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: clamp(1.5rem, 4.5vw, 2.4rem);
+  line-height: 1.25;
+  color: #000;
+}
+
+.shared-footer-brand-name {
+  font-weight: 700;
+  color: #35004d;
+  text-transform: uppercase;
+}
+
+.footer-categorytype {
+  text-transform: capitalize;
+}
+
+.shared-footer-bottom-wrapper {
+  width: 100%;
+  border-top: 1px solid #e2e8f0;
+  padding: 2.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.shared-footer-container {
+  width: 100%;
+  max-width: 1024px;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.shared-footer-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.shared-footer-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.shared-footer-attribution {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.shared-footer-attribution span {
+  color: #35004d;
+  text-decoration: underline #35004d;
+  font-weight: 700;
+}
+
+.shared-footer-legal-bar {
+  width: 100%;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.shared-footer-legal-text {
+  font-size: 11px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
